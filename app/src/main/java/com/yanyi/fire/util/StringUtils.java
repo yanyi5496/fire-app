@@ -1,4 +1,4 @@
-package com.yanyi.fire.net;
+package com.yanyi.fire.util;
 
 import android.content.Context;
 import android.text.TextUtils;

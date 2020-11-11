@@ -5,10 +5,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import android.util.Patterns
 import com.yanyi.fire.data.LoginRepository
-import com.yanyi.fire.data.Result
 
 import com.yanyi.fire.R
-import com.yanyi.fire.net.RespLiveData
+import com.yanyi.fire.util.RespLiveData
 
 class LoginViewModel(private val loginRepository: LoginRepository) : ViewModel() {
 
@@ -16,7 +15,8 @@ class LoginViewModel(private val loginRepository: LoginRepository) : ViewModel()
     val loginFormState: LiveData<LoginFormState> = _loginForm
 
 
-    val loginResult: RespLiveData<LoginResult> = RespLiveData()
+    val loginResult: RespLiveData<LoginResult> =
+        RespLiveData()
 
     fun login(username: String, password: String) {
         // can be launched in a separate asynchronous job

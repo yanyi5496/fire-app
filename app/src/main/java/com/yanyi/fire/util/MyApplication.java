@@ -1,4 +1,4 @@
-package com.yanyi.fire.net;
+package com.yanyi.fire.util;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

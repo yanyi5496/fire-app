@@ -1,4 +1,4 @@
-package com.yanyi.fire.net;
+package com.yanyi.fire.util;
 
 /**
  * lambda 用, 为了向下兼容, 参考官方文档

@@ -4,17 +4,18 @@ import android.app.Activity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.widget.Button
 import android.widget.EditText
-import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.yanyi.fire.R
+import com.yanyi.fire.data.LoginDataSource
+import com.yanyi.fire.data.LoginRepository
+import com.yanyi.fire.im.NettyClient
 
 class LoginActivity : AppCompatActivity() {
 
@@ -28,7 +29,12 @@ class LoginActivity : AppCompatActivity() {
         val username = findViewById<EditText>(R.id.username)
         val password = findViewById<EditText>(R.id.password)
         val login = findViewById<Button>(R.id.login)
-        val loading = findViewById<ProgressBar>(R.id.loading)
+
+
+        var netty = NettyClient()
+        netty.start()
+
+
 
         loginViewModel = ViewModelProviders.of(this, LoginViewModelFactory())
             .get(LoginViewModel::class.java)
@@ -49,9 +55,7 @@ class LoginActivity : AppCompatActivity() {
 
         loginViewModel.loginResult.observe(this@LoginActivity, Observer {
             val loginResult = it ?: return@Observer
-            println(loginResult)
 
-            loading.visibility = View.GONE
             val user = LoggedInUserView(loginResult.username, loginResult.userId, loginResult.token)
             updateUiWithUser(user)
 

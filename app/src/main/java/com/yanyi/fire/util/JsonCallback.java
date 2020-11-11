@@ -1,4 +1,4 @@
-package com.yanyi.fire.net;
+package com.yanyi.fire.util;
 
 import android.accounts.NetworkErrorException;
 import android.content.Context;
@@ -14,7 +14,6 @@ import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 import com.lzy.okgo.callback.AbsCallback;
 import com.lzy.okgo.model.Response;
-import com.yanyi.fire.R;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;

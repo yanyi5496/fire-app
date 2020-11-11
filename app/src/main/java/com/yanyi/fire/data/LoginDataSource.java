@@ -1,9 +1,9 @@
 package com.yanyi.fire.data;
 
 import com.lzy.okgo.OkGo;
-import com.yanyi.fire.net.BaseResponse;
-import com.yanyi.fire.net.JsonCallback;
-import com.yanyi.fire.net.RespLiveData;
+import com.yanyi.fire.util.BaseResponse;
+import com.yanyi.fire.util.JsonCallback;
+import com.yanyi.fire.util.RespLiveData;
 import com.yanyi.fire.ui.login.LoginResult;
 
 import org.json.JSONObject;
